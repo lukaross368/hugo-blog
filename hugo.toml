@@ -4,7 +4,6 @@ theme = 'resume'
 title = 'Luka Ross Blog'
 enableRobotsTXT = true
 pagination.pagerSize = 6
-canonifyURLs = true
 
 [params]
   subtitle = 'Engineering, reviews, gaming, and personal projects.'
