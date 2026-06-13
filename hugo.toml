@@ -3,7 +3,7 @@ locale = 'en-us'
 theme = 'resume'
 title = 'Luka Ross Blog'
 enableRobotsTXT = true
-paginate = 6
+pagination.pagerSize = 6
 canonifyURLs = true
 
 [params]
