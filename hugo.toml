@@ -5,6 +5,10 @@ title = 'Luka Ross Blog'
 enableRobotsTXT = true
 pagination.pagerSize = 6
 
+# Disable default tag/category taxonomies (no posts use them yet).
+# To re-enable tagging later, delete this empty table.
+[taxonomies]
+
 [params]
   subtitle = 'Engineering, reviews, gaming, and personal projects.'
   description = 'A blog for engineering posts, film and book reviews, and gaming.'
