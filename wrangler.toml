@@ -1,5 +1,9 @@
 name = "hugo-blog"
 compatibility_date = "2025-01-01"
 
+routes = [
+  { pattern = "blog.luka-ross.com", custom_domain = true }
+]
+
 [assets]
 directory = "./public"
