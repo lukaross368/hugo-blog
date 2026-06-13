@@ -1,0 +1,5 @@
+<div class="brand">
+  <a class="brand-link" href="/">{{ .Site.Title }}</a>
+  <p class="brand-subtitle">{{ .Site.Params.subtitle }}</p>
+</div>
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}

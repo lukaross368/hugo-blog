@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <section class="hero">
+    <p class="eyebrow">Resume blog</p>
+    <h1>{{ .Site.Title }}</h1>
+    <p class="hero-copy">{{ .Site.Params.description }}</p>
+    <div class="hero-links">
+      <a class="button" href="/engineering/">Engineering</a>
+      <a class="button" href="/reviews/">Reviews</a>
+      <a class="button" href="/gaming/">Gaming</a>
+    </div>
+  </section>
+
+  <section class="featured-posts">
+    <div class="section-heading">
+      <h2>Latest posts</h2>
+      <p>Showcase your skills, hobbies and personality in every post.</p>
+    </div>
+    <div class="post-grid">
+      {{ range first 6 .Site.RegularPages.ByDate.Reverse }}
+        <article class="post-card">
+          <a href="{{ .RelPermalink }}">
+            <h3>{{ .LinkTitle }}</h3>
+          </a>
+          <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
+          <p>{{ .Summary }}</p>
+        </article>
+      {{ else }}
+        <p>No posts yet. Create your first story in one of the topic sections.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

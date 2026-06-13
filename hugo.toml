@@ -1,0 +1,41 @@
+baseURL = 'https://blog.luka-ross.com/'
+locale = 'en-us'
+theme = 'resume'
+title = 'Luka Ross Blog'
+enableRobotsTXT = true
+paginate = 6
+canonifyURLs = true
+
+[params]
+  subtitle = 'Engineering, reviews, gaming, and personal projects.'
+  description = 'A blog for engineering posts, film and book reviews, and gaming.'
+  author = 'Luka Ross'
+  email = 'luka.ross9@gmail.com'
+  github = 'https://github.com/lukaross368'
+  linkedin = 'https://www.linkedin.com/in/luka-ross-6ba1a7177/'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+
+  [[menu.main]]
+    name = 'Engineering'
+    url = '/engineering/'
+    weight = 2
+
+  [[menu.main]]
+    name = 'Reviews'
+    url = '/reviews/'
+    weight = 3
+
+  [[menu.main]]
+    name = 'Gaming'
+    url = '/gaming/'
+    weight = 4
+
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 5

@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <article class="section-header">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+
+  <div class="post-grid">
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="post-card">
+        <a href="{{ .RelPermalink }}"><h2>{{ .LinkTitle }}</h2></a>
+        <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
+        <p>{{ .Summary }}</p>
+      </article>
+    {{ else }}
+      <p>No posts yet in this section. Add a new one with <code>hugo new {{ .File.Dir | urlize }}/your-post.md</code>.</p>
+    {{ end }}
+  </div>
+{{ end }}

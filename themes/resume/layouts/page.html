@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <article class="post-detail">
+    <header>
+      <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ .Content }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </article>
+{{ end }}
