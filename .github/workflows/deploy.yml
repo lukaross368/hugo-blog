@@ -14,7 +14,7 @@ jobs:
         with:
           submodules: recursive
 
-      - uses: peaceiris/actions-hugo@v5
+      - uses: peaceiris/actions-hugo@v3.2.1
         with:
           hugo-version: '0.163.1'
           extended: true
