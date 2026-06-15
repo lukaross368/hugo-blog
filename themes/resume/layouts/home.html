@@ -14,7 +14,7 @@
           <a href="{{ .RelPermalink }}">
             <h3>{{ .LinkTitle }}</h3>
           </a>
-          <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
+          <p class="post-meta"><span class="badge badge--{{ .Section }}">{{ .Section | title }}</span> {{ .Date.Format "Jan 2, 2006" }}</p>
           <p>{{ .Summary }}</p>
         </article>
       {{ else }}

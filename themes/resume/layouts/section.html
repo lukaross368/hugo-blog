@@ -8,7 +8,7 @@
     {{ range .Pages.ByDate.Reverse }}
       <article class="post-card">
         <a href="{{ .RelPermalink }}"><h2>{{ .LinkTitle }}</h2></a>
-        <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
+        <p class="post-meta"><span class="badge badge--{{ .Section }}">{{ .Section | title }}</span> {{ .Date.Format "Jan 2, 2006" }}</p>
         <p>{{ .Summary }}</p>
       </article>
     {{ end }}
