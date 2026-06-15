@@ -1,0 +1,15 @@
+{{- /* Render two bundle images side by side as a centered, captioned row. */ -}}
+{{- $pairs := slice -}}
+{{- with .Get "img1" }}{{ $pairs = $pairs | append (dict "src" . "cap" ($.Get "cap1")) }}{{ end -}}
+{{- with .Get "img2" }}{{ $pairs = $pairs | append (dict "src" . "cap" ($.Get "cap2")) }}{{ end -}}
+<div class="figure-row">
+{{- range $pairs }}
+{{- $src := .src }}
+{{- $cap := .cap }}
+{{- with $.Page.Resources.GetMatch $src }}
+{{- $i := . }}
+{{- if gt $i.Width 1200 }}{{ $i = $i.Resize "1200x webp q82" }}{{ else }}{{ $i = $i.Process "webp q82" }}{{ end }}
+<figure class="post-image"><img src="{{ $i.RelPermalink }}" alt="{{ $cap }}" width="{{ $i.Width }}" height="{{ $i.Height }}" loading="lazy" decoding="async">{{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>
+{{- end }}
+{{- end }}
+</div>

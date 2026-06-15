@@ -1,1 +1,3 @@
-<link rel="stylesheet" href="/css/main.css">
+{{- /* Cache-bust the stylesheet whenever any CSS file changes, so browsers never serve a stale main.css. */ -}}
+{{- $v := print (readFile "static/css/main.css") (readFile "static/css/components/header.css") (readFile "static/css/components/footer.css") | hash.FNV32a -}}
+<link rel="stylesheet" href="{{ "/css/main.css" | relURL }}?v={{ $v }}">

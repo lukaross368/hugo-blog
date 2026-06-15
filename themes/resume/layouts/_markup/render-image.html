@@ -1,0 +1,21 @@
+{{- /* Image render hook: resize + WebP + lazy-load, with optional caption from the markdown title. */ -}}
+{{- $alt := .PlainText -}}
+{{- $caption := .Title -}}
+{{- $dest := .Destination -}}
+{{- $img := "" -}}
+{{- with .Page.Resources.GetMatch $dest -}}
+  {{- $img = . -}}
+  {{- if gt .Width 1200 -}}
+    {{- $img = .Resize "1200x webp q82" -}}
+  {{- else -}}
+    {{- $img = .Process "webp q82" -}}
+  {{- end -}}
+{{- end -}}
+{{- if $img -}}
+<figure class="post-image">
+  <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+  {{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end -}}
+</figure>
+{{- else -}}
+<img src="{{ $dest | safeURL }}" alt="{{ $alt }}"{{ with $caption }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

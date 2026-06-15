@@ -67,6 +67,62 @@ a:hover {
   font-weight: 600;
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  color: #9ca3af;
+  transition: color 0.15s ease;
+}
+
+.social-link:hover {
+  color: #2563eb;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.post-image {
+  margin: 1.75rem auto;
+  max-width: 100%;
+}
+
+.figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1.75rem 0;
+}
+
+.figure-row .post-image {
+  margin: 0;
+  flex: 1 1 240px;
+  min-width: 0;
+  max-width: 340px;
+}
+
+.post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.post-image figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6b7280;
+  text-align: center;
+}
+
 .section-heading {
   margin-bottom: 1rem;
 }

@@ -11,8 +11,6 @@
         <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} • {{ .Section | title }}</p>
         <p>{{ .Summary }}</p>
       </article>
-    {{ else }}
-      <p>No posts yet in this section. Add a new one with <code>hugo new {{ .File.Dir | urlize }}/your-post.md</code>.</p>
     {{ end }}
   </div>
 {{ end }}
